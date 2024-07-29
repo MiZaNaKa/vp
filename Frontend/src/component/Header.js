@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {useNavigate} from "react-router-dom" 
 import Drawer from 'react-modern-drawer'
 import Menu from "../img/menu.png"
@@ -6,9 +6,6 @@ import Logo from "../img/logo.PNG"
 import User from "../img/user.png"
 import { Link } from "react-router-dom";
 import Close from "../img/close.png"
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import 'react-modern-drawer/dist/index.css'
 
 const Header = () => {
@@ -41,37 +38,35 @@ const Header = () => {
     }
 
     return (
-        <div className='headerBox clearfix' >
-            
+        <div>
             <div class="vw-100 position-fixed top-0  bg-white pt-3">
-                <Container >
-                    <Row>
-                        <Col>
+                <div class="container">  
+                    <div class="row">
+                        <div class="col">
                             <Link to="/">
                                 <img src={Logo} className='logo'/>
                             </Link>
+                        </div>
+                        <div class="col-5">
                         
-                        </Col>
-                        <Col xs={8}></Col>
-                        
-                        <Col>
+                        </div>
+                        <div class="col">
                             <img onClick={toggleDrawer} src={Menu} className='toggleIcon'/>
-                        </Col>
-                        <Col>
+                        </div>
+                        <div class="col text-center">
                             {userInfo ?
-                                <img src={User} style={{width:30,height:30}}/>
+                                <img src={User} className='userIcon'/>
                                 :
-                                <img className='cursor' onClick={()=>goRoute("Login")} src={User} style={{width:30,height:30}}/>
+                                <img className='cursor userIcon' onClick={()=>goRoute("Login")} src={User}/>
                             }
+                            <div>
+                            <p style={{fontSize:12}}>{userInfo.name}</p>
+                            </div>
                             
-                            <p style={{padding:0,margin:0}}>{userInfo.name}</p>
-                        </Col>
-                    </Row>
-                </Container>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            
-           
             
             <Drawer
                 open={isOpen}
@@ -87,7 +82,7 @@ const Header = () => {
                             </div>
 
                             <div>
-                                <p onClick={()=>goRoute("List")} className='cursor'>List</p>
+                                <p onClick={()=>goRoute('')} className='cursor'>List</p>
                             </div>
 
                             <div>

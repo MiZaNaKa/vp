@@ -53,7 +53,7 @@ function Edit() {
             try{
                 var result = await Axios.post(`action/edit/`+params.id,data)
                 if(result.data.status===1){
-                    navigate("/List")
+                    navigate("/")
                 }
             }
             catch(e){

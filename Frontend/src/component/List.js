@@ -3,7 +3,6 @@ import Header from './Header';
 import Axios from "../api/customAxios";
 import {useNavigate} from "react-router-dom" 
 import NoData from "../img/not-found.png"
-import Button from 'react-bootstrap/Button';
 
 const List = () => {
     const [data, setData] = React.useState(false)
@@ -50,7 +49,7 @@ const List = () => {
     return (
         <div>
             <Header/>
-            <div style={{width:'90%',margin:'0 auto',marginTop:60}}>
+            <div style={{width:'90%',margin:'0 auto',marginTop:120}}>
                 
                 {data.length>0 ?
                     <table class="table">

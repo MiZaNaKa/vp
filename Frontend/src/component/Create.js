@@ -35,7 +35,7 @@ function Ticket() {
             try{
                 var result = await Axios.post(`action/create`,data)
                 if(result.data.status===1){
-                    navigate("/List")
+                    navigate("/")
                 }
             }
             catch(e){

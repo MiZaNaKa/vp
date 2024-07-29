@@ -40,7 +40,7 @@ class App extends Component {
                   ></Route>
                  
                   <Route path="Create" element={<PrivateRoute Component={Create} />} />
-                  <Route exact path="List" element={<PrivateRoute Component={List} />} />
+                  {/* <Route exact path="List" element={<PrivateRoute Component={List} />} /> */}
                   
                   <Route exact  path="Edit/:id" element={<PrivateRoute Component={Edit} />} />
 
